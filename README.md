@@ -103,10 +103,6 @@ The bonuses come from `src/data/bonusItems.js`
 
 ## Academic Integrity
 
-- Do this assessment **on your own**.
-  - Do not pair program with other fellows.
-  - Do not refer to work from other fellows.
-  - Do not ask individuals outside the program for help.
 - You can refer to any notes that you have.
 - You can Google anything you want, but do not copy any code that you do not understand.
 - Your instructors are here to help you with technical difficulties.

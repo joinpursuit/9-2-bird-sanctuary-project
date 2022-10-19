@@ -1,7 +1,16 @@
+import { useState } from "react";
+import "./App.css"
+import BirdsCards from "./Components/BirdsCards";
+import Checkout from "./Components/Checkout";
+
+
+
 function App () {
+  const [selectBird, setSelectBird] = useState([])
   return (
     <div>
-      <h1>Hello, world!</h1>
+     <BirdsCards selectBird={selectBird} setSelectBird={setSelectBird}/>
+<Checkout/>
     </div>
   );
 };

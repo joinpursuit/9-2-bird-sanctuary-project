@@ -3,7 +3,8 @@ import bonusItems from "../data/bonusItems";
 console.log(bonusItems);
 
 const Bonus = ({ total }) => {
-  const [bonus, setBonus] = useState(0);
+  const [bonus, setBonus] = useState([]);
+  console.log(total);
 
   useEffect(() => {
     const numBonusItems =
@@ -16,14 +17,12 @@ const Bonus = ({ total }) => {
         : total < 1000
         ? 3
         : 4;
-    setBonus(numBonusItems);
-    console.log("total", total);
-    console.log("bonus", numBonusItems);
+    setBonus(bonusItems.slice(0, numBonusItems));
   }, [total]);
 
   return (
     <>
-      {bonusItems.slice(0, bonus).map((item, i) => (
+      {bonus.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
     </>

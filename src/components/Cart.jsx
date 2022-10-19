@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import Bonus from "./Bonus";
 
 const Cart = ({ cart, setCart }) => {
-  console.log(cart);
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
 
   useEffect(() => {
     if (cart.length) {
+      if (cart.length >= 3) {
+        setDiscount(10);
+      } else {
+        setDiscount(0);
+      }
       let newTotal = 0;
       cart.forEach((item) => (newTotal += item.amount));
       setTotal(newTotal);
     } else {
       setTotal(0);
       setDiscount(0);
-    }
-    if (cart.length >= 3) {
-      setDiscount(10);
     }
   }, [cart]);
 

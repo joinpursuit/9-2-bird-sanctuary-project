@@ -1,8 +1,15 @@
+import React from "react";
+import "./index.css";
+import Birds from "./Components/Birds.js";
+
 function App () {
   return (
-    <div>
+    <>
       <h1>Hello, world!</h1>
-    </div>
+      <div className="container">
+      <Birds />
+      </div>
+    </>
   );
 };
 

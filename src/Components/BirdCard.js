@@ -9,18 +9,18 @@ setSelectedBird([...selectedBird, bird])
 
     return (
         <div className="birds">
-            <ul>
+            <>
                 {birds.map((bird) => (
-                    <li key={bird.id} className="card">
-                        {bird.name}
-                        {bird.amount}
+                    <div key={bird.id} className="card">
+                       <h4>{bird.name}</h4> 
+                       <p>${bird.amount}</p> 
                         <img src={bird.img} alt={bird.name} style={{ width: "150px" }} />
                         <button onClick={()=>addBird(bird)}>
                             Adopt
                         </button>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </>
     </div>
 )
 

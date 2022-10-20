@@ -1,0 +1,47 @@
+.App {
+    background-color: beige;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-wrap: column;
+    
+}
+
+h5 {
+    font-size: xx-large;
+}
+
+.Cart, .Checkout{
+    border: solid;
+    border-width: 5px;
+    border-color: burlywood;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-flow: wrap;
+    width: 100vw;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    align-items: center;
+    border: solid 5px burlywood;
+    box-sizing: border-box; 
+    background-color: white;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

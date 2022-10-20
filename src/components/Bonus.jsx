@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import bonusItems from "../data/bonusItems";
-console.log(bonusItems);
 
 const Bonus = ({ total }) => {
   const [bonus, setBonus] = useState([]);
-  console.log(total);
 
   useEffect(() => {
     const numBonusItems =

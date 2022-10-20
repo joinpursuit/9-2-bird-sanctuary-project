@@ -7,13 +7,8 @@ const Cart = ({ cart, setCart }) => {
 
   useEffect(() => {
     if (cart.length) {
-      if (cart.length >= 3) {
-        setDiscount(10);
-      } else {
-        setDiscount(0);
-      }
-      let newTotal = 0;
-      cart.forEach((item) => (newTotal += item.amount));
+      cart.length >= 3 ? setDiscount(10) : setDiscount(0);
+      const newTotal = cart.reduce((a, item) => a + item.amount, 0);
       setTotal(newTotal);
     } else {
       setTotal(0);

@@ -1,9 +1,27 @@
+import { useState } from "react";
+
 const Checkout = ({ setCart }) => {
+  const [order, setOrder] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zip: "",
+  });
+
+  const handleChange = (e) => {
+    setOrder({ ...order, [e.target.id]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("You have adopted birds. Thank you!");
-    e.target.reset();
     setCart([]);
+    setOrder({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zip: "",
+    });
   };
   return (
     <div className="Checkout">
@@ -11,19 +29,41 @@ const Checkout = ({ setCart }) => {
       <form onSubmit={handleSubmit}>
         <label>
           First Name
-          <input type="text" />
+          <input
+            type="text"
+            value={order.firstName}
+            id="firstName"
+            onChange={handleChange}
+          />
         </label>
         <label>
           Last Name
-          <input type="text" />
+          <input
+            type="text"
+            id="lastName"
+            value={order.lastName}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Email
-          <input type="email" />
+          <input
+            type="email"
+            id="email"
+            value={order.email}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Zip Code
-          <input type="text" pattern="[0-9]{5}" title="Five digit zip code" />
+          <input
+            type="text"
+            pattern="[0-9]{5}"
+            title="Five digit zip code"
+            id="zip"
+            value={order.zip}
+            onChange={handleChange}
+          />
         </label>
         <input type="submit"></input>
       </form>

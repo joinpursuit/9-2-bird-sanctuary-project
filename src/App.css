@@ -1,4 +1,20 @@
 img {
-    width:50%;
-    height:50%;
+  width: 30%;
+  height: 30%;
+}
+
+#button:hover {
+  color: rgb(152, 30, 8);
+  background-color: aquamarine;
+}
+
+.h6 {
+  color: darkblue;
+  text-shadow: crimson;
+}
+
+.birds {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }

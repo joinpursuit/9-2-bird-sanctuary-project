@@ -5,15 +5,13 @@ import Checkout from "./components/Checkout";
 import React from "react";
 import "./App.css";
 
-
-
 function App() {
-  const [selectBird, setSelectBird] = useState([]);
+  const [selectBird, setSelectBird] = useState();
 
   return (
     <div>
       <BirdsCards selectBird={selectBird} setSelectBird={setSelectBird} />
-      <Checkout/>
+      <Checkout />
     </div>
   );
 }

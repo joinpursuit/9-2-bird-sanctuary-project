@@ -14,7 +14,7 @@ function App() {
         <div className="Cart">
           <Cart selectedBirds={selectedBirds} updateSelectedBirds={updateSelectedBirds} />
           <div className="Checkout">
-          <Checkout updateSelectedBirds={updateSelectedBirds}/> 
+          <Checkout updateSelectedBirds={updateSelectedBirds} selectedBirds={selectedBirds}/> 
           </div>
           
         </div>

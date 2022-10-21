@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Checkout() {
-  //formDetails is a variable, setFormDetails is a function. useState will always return a variable and a function. when we use state, we destructure it
+function Checkout({ setSelectedBird }) {
+  //setting state for the form details
   const [formDetails, setFormDetails] = useState({
     firstName: "",
     lastName: "",
@@ -9,17 +9,17 @@ function Checkout() {
     zipCode: "",
   });
 
+  //this function handles any changes to the form and sets the input to the appropiate targetted field
   function handleFormChange(e) {
-    console.log(e.target.id);
-    console.log(e.target.value);
+    //creates a deep copy of the old data so that new information can be inputted and saved
     const newDetails = JSON.parse(JSON.stringify(formDetails));
     newDetails[e.target.id] = e.target.value;
     setFormDetails(newDetails);
   }
 
+  //this function handles the submission, resets the form, and edge cases
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(formDetails);
     if (
       formDetails.firstName &&
       formDetails.lastName &&
@@ -27,6 +27,7 @@ function Checkout() {
       formDetails.zipCode
     ) {
       alert("You have adopted birds. Thank you!");
+      setSelectedBird([]);
       setFormDetails({
         firstName: "",
         lastName: "",
@@ -69,6 +70,7 @@ function Checkout() {
         onChange={handleFormChange}
         id="zipCode"
       />
+      <br />
       <input type="submit" />
     </form>
   );

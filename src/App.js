@@ -2,19 +2,19 @@ import { useState } from "react";
 import BirdCard from "./Components/BirdCard";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
-
+import "./App.css";
 
 function App() {
-
-const [selectedBird, setSelectedBird] = useState([])
+  //setting state for the selection of birds
+  const [selectedBird, setSelectedBird] = useState([]);
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <Cart selectedBird={ selectedBird} />
+    <div className="container">
       <BirdCard selectedBird={selectedBird} setSelectedBird={setSelectedBird} />
-      <Checkout/>
+      <Checkout setSelectedBird={setSelectedBird} />
+      <Cart selectedBird={selectedBird} setSelectedBird={setSelectedBird} />
     </div>
   );
-};
+}
 
 export default App;

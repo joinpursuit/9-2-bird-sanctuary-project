@@ -34,6 +34,7 @@ const Checkout = ({ setCart }) => {
             value={order.firstName}
             id="firstName"
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -43,6 +44,7 @@ const Checkout = ({ setCart }) => {
             id="lastName"
             value={order.lastName}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -52,6 +54,7 @@ const Checkout = ({ setCart }) => {
             id="email"
             value={order.email}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -63,6 +66,7 @@ const Checkout = ({ setCart }) => {
             id="zip"
             value={order.zip}
             onChange={handleChange}
+            required
           />
         </label>
         <input type="submit"></input>

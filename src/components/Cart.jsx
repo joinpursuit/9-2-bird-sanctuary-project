@@ -2,23 +2,7 @@ import { useEffect, useState } from "react";
 import Bonus from "./Bonus";
 
 const Cart = ({ cart, setCart }) => {
-  const [total, setTotal] = useState(0);
-  const [discount, setDiscount] = useState(0);
-
-  useEffect(() => {
-    if (cart.length) {
-      cart.length >= 3 ? setDiscount(10) : setDiscount(0);
-      const newTotal = cart.reduce((a, item) => a + item.amount, 0);
-      setTotal(newTotal);
-    } else {
-      setTotal(0);
-      setDiscount(0);
-    }
-  }, [cart]);
-
-  useEffect(() => {
-    setTotal((prev) => (prev / 100) * (100 - discount));
-  }, [discount]);
+  const total = cart.reduce((a, item) => a + item.amount, 0);
 
   const removeItem = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
@@ -27,7 +11,7 @@ const Cart = ({ cart, setCart }) => {
   return (
     <div className="Cart">
       <h3>Cart</h3>
-      <h3>Discount: {discount}%</h3>
+      <h3>Discount: {cart.length >= 3 ? 10 : 0}%</h3>
       <h4>Total: ${total} </h4>
 
       <ol>

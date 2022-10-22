@@ -1,21 +1,34 @@
-import React from "react";
+import bonusItems from "../data/bonusItems";
+export default function Cart({ cart, setCart }) {
 
-//usestate from birds for adopt button "$0"
-//-adopt button shoult change cart content
+  let cartTotal = cart.reduce((a, b) => {
+    return b.amount + a;
+  }, 0);
 
-export default Cart = () => {
-    return (
-        <div className="cartCard">
-            <span>Cart</span>
-            <p>Discount {discount}</p>
-            <p>Total: {totalCost}<p/>
-            
-            {adopt ? <li key={birdie.id}>
-                {birdie.name}: {birdie.amount}
-            </li>  : null
+  
+  const updateBirdsArray = (bird) => {
+    cart.splice(cart.indexOf(bird), 1);
 
-            }
+    setCart([...cart]);
+  };
 
-        </div>
-    )
+  
+
+  return (
+    <div className="Cart">
+      <h4>Cart</h4>
+      <p>Discount: {cart.length >= 3 ? "10%" : "0%"}</p>
+      <h4>Total: ${cartTotal}</h4>
+      <ol>
+        {cart.map((birdie) => {
+          return (
+            <li key={birdie.id}>
+              {birdie.name}: ${birdie.amount}
+              <button onClick={() => updateBirdsArray(birdie)}>Remove</button>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
 }

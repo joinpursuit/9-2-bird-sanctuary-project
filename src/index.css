@@ -1,4 +1,61 @@
 body {
     background-color: lightblue;
+    display: grid;
+    
+    
 }
 
+img {
+     width:  200px;
+    height: 100px; 
+    
+}
+
+.birds {
+   
+   display: grid;
+   grid-template-columns: repeat(4, 200px);
+    grid-gap: 60px; 
+    justify-content:center;
+    align-items: stretch;
+    
+   
+ /* justify-content: center;
+ justify-items: end;
+   align-content: space-evenly; */
+
+ 
+
+}
+
+li {
+    display: grid;
+
+    background-color: rgb(146, 177, 167);
+  
+}
+
+.card {
+    float: left;
+    margin-left: 100px;
+
+}
+
+
+.checkout {
+
+  float: left;
+  
+}
+
+span {
+
+text-align: center;
+    
+}
+
+p {
+
+    color: white;
+    text-align: center;
+}

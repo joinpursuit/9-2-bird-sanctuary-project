@@ -1,27 +1,25 @@
 import React from "react";
 import birdData from "../data/birds";
-export default function Birds  ()  {
+export default function Birds ({ cart, setCart }) {
+const birdForCart = (birdie) => {
+    setCart([...cart, birdie]);
+  }
 
-    return (
-
-        <div className="birdCard">
-            {console.log(birdData)}
-            <ul>
-                {
-                    birdData.forEach((birdie) => {
-                        return(
-                        <li key={birdie.id}>
-                            <img src={birdie.img} alt="Picture of a bird" />
-                            <span>{birdie.name}</span>
-                            <p>Price ${birdie.amount}</p>
-                            <button>Adopt</button>
-                        </li>
-                        );
-                    })
-                }
-            </ul>
-        </div>
-  
-    )
+  return (
+    <>
+      {/**console.log(birdData**/}
+      <ul className="birds">
+        {birdData.map((birdie) => {
+          return (
+            <li key={birdie.id}>
+              <img src={birdie.img} alt="bird" />
+              <span>{birdie.name}</span>
+              <p>Price ${birdie.amount}</p>
+              <button onClick={() => birdForCart(birdie)}>Adopt</button>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
 }
-

@@ -1,9 +1,9 @@
 
 import { useState } from "react";
-import BirdCard from "./components/BirdCard";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
-import avian from "./data/birds.js.js";
+import BirdCard from "../src/components/BirdCard";
+import Cart from "../src/components/Cart";
+import Checkout from "../src/components/Checkout";
+import avian from "../src/data/birds.js";
 import "./App.css";
 
 function App() {

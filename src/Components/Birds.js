@@ -1,9 +1,9 @@
-import React from "react";
+
 import birdData from "../data/birds";
-export default function Birds ({ cart, setCart }) {
-const birdForCart = (birdie) => {
+export default function Birds({ cart, setCart }) {
+  const birdForCart = (birdie) => {
     setCart([...cart, birdie]);
-  }
+  };
 
   return (
     <>

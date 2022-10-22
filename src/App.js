@@ -13,7 +13,6 @@ function App() {
     zipCode: "",
   });
 
-
   return (
     <>
       <div className="card">

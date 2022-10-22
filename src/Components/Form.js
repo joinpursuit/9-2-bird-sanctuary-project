@@ -1,13 +1,10 @@
-
-export default function Form({setCart,formSubmit}) {
-
-
-const resets = (e) => {
+export default function Form({ setCart, formSubmit }) {
+  const resets = (e) => {
     e.preventDefault();
     formSubmit({});
     setCart([]);
     alert("You have adopted birds. Thank you!");
-  }
+  };
 
   return (
     <div className="Checkout">

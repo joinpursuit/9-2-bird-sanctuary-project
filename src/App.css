@@ -3,7 +3,7 @@ body {
     background: #f8f4f2;
     font-family: Arial;
     display: grid;
-    background-color: rgba(78, 120, 0, 0.8);
+    background-color: rgba(134, 144, 235, 0.8);
     grid-template-columns: 2fr 20fr;
     grid-template-rows: 20fr 8fr;
     background-size: 10%;

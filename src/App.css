@@ -1,0 +1,27 @@
+.birds{
+    display:grid;
+    /* grid-template-columns: repeat(3,1fr); */
+    /* grid-column: 2/4; */
+   border:2px solid black;
+   text-align: center;
+   align-items: center;
+
+}
+.img-size{
+    width:100px;
+    height:100px;
+    align-self: center;
+    justify-self: center;
+}
+main{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.birds-display{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-column: 2/4;
+    column-gap: 10px;
+    row-gap:10px
+}

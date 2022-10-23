@@ -1,9 +1,13 @@
-function App () {
+import React, { useState } from "react";
+import BirdCards from "./BirdCards";
+import "./App.css";
+
+function App() {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <BirdCards />
     </div>
   );
-};
+}
 
 export default App;

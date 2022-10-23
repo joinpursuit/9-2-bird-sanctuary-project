@@ -1,9 +1,16 @@
+import Birds from "./Birds";
+// import Cart from "./Cart"
+
+// import bonusItems from "./data/bonusItems";
+import './App.css'
 function App () {
+
+
   return (
-    <div>
-      <h1>Hello, world!</h1>
-    </div>
+<Birds />
+
   );
+
 };
 
 export default App;

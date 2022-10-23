@@ -3,10 +3,9 @@ body {
     background: #f8f4f2;
     font-family: Arial;
     display: grid;
-    background-color: rgba(120, 20, 0, .8);
+    background-color: rgba(78, 120, 0, 0.8);
     grid-template-columns: 2fr 20fr;
     grid-template-rows: 20fr 8fr;
-    background-image: url("https://as2.ftcdn.net/v2/jpg/03/16/43/59/1000_F_316435933_mI2rH9zlYhYHj46BPDb0Zvia8wpu1Y7e.jpg");
     background-size: 10%;
   }
 

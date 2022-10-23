@@ -1,27 +1,28 @@
+export default function BirdCard ({avian, setBirdFlu, birdFlu}) {
 
-import { useState } from "react";
-import BirdCard from "./components/BirdCard";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
-import avian from "./data/birds.js.js";
-import "./App.css";
-
-function App() {
-  const [birdFlu, setBirdFlu] = useState([]);
-
-  return (
-    <div className="container">
-      <div className="left border">
-        <Cart birdFlu={birdFlu} setBirdFlu={setBirdFlu} />
-      </div>
-      <div className="right">
-        <BirdCard avian={avian} setBirdFlu={setBirdFlu} birdFlu={birdFlu} />
-      </div>
-      <div className="left2 border moremargin">
-        <Checkout setBirdFlu={setBirdFlu} />
-      </div>
-    </div>
-  );
-}
-
-export default App;
+  function addBird(birb){
+      setBirdFlu([...birdFlu, birb])
+  }
+      let birdCard = avian.map((birb) => {
+          return (
+          <div key={birb.id} id={birb.id} className="a-box card birds">
+          <div className="img-container">
+            <div className="img-inner">
+              <div className="inner-skew">
+                <img src={birb.img} alt={birb.name}/>
+              </div>
+            </div>
+          </div>
+          <div className="text-container">
+            <h3>{birb.name}</h3>
+            <div>${birb.amount}</div>
+            <button key={birb.id} onClick={() => addBird({name: birb.name, amount: birb.amount, id: birb.id})}
+          >Adopt</button>
+        </div>
+        </div>
+        )
+          }
+        )
+      return (
+      <div>{birdCard} </div>)
+  }

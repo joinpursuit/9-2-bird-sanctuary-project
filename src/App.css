@@ -1,0 +1,75 @@
+.app {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 500px;
+}
+
+.birdCardContainer {
+  height: 1100px;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card {
+  border: 2px solid gray;
+  width: 80%;
+  text-align: center;
+  background-color: rgb(224, 247, 243);
+  margin-top: 30px;
+  height: 320px;
+}
+
+.card h4 {
+  font-size: 24px;
+}
+
+.card button {
+  display: block;
+  margin: auto;
+  width: 200px;
+}
+
+.birds img {
+  width: 150px;
+  height: 150px;
+}
+
+.Cart {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border: 2px solid gray;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.Cart h3 {
+  font-size: 28px;
+}
+
+.Cart h4 {
+  font-size: 20px;
+}
+
+.Cart h5 {
+  font-size: 20px;
+}
+
+.Checkout {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border: 2px solid gray;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.Checkout input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}

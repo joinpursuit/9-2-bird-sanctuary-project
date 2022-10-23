@@ -40,7 +40,7 @@ alert("You have adopted birds. Thank you!")
               <div>Zip Code</div>
               <input  value={zipcode} onChange={(e)=> setZipCode(e.target.value)}/>
             </label>
-            <input type="submit"/>
+            <input type="submit" id="submit-button"/>
           </form>
         </div>
       

@@ -9,17 +9,18 @@ function BirdsCards({selectBird, setSelectBird}){
   }
   return (
      <div className="birds">
-        <ul>
+        <ul className="eachCard">
           {birds.map((bird) =>(
 
            <li key={bird.id} className="card">
 
         {bird.name}
-        {bird.amount} 
-
-             <img alt={bird.name} src={bird.img}/>
-
-             <button onClick={() => displayBird(bird)}>Adopt</button>
+        <br/>
+       $ {bird.amount} 
+        <br/>
+        <img alt={bird.name} src={bird.img}/>
+        <br/>
+        <button id="button" onClick={() => displayBird(bird)}>Adopt</button>
            </li>  
     )) 
 }

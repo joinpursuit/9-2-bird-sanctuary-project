@@ -13,7 +13,11 @@ export default function Checkout({ selectedBirds, updateSelectedBirds }) {
     e.preventDefault();
     if (selectedBirds.length === 0) {
       alert("Please add a bird to your cart");
-    } else {
+    } 
+    else if (firstName === "" || lastName === "" || email === "" || zipcode === ""){
+      alert("Please complete the form")
+    }
+    else {
       alert("You have adopted birds. Thank you!");
       updateSelectedBirds([]);
       setFirstName("");

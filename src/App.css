@@ -1,20 +1,59 @@
-img {
-  width: 30%;
-  height: 30%;
+.App {
+  background-image: url("https://i.pinimg.com/originals/ef/2c/c7/ef2cc78f1699dd579e3a5c6055d774ae.jpg");
 }
 
-#button:hover {
+main {
+  display: flex;
+  flex-wrap: column;
+  font-family: fantasy;
+  font-style: italic;
+  color: chartreuse;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: aquamarine;
+}
+
+.Cart,
+.Checkout {
+  border: solid 5px rgb(57, 198, 130);
+}
+
+.cards {
+  display: flex;
+  flex-flow: wrap;
+  width: 85%;
+}
+
+.birds {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  border: solid 5px rgb(57, 198, 130);
+  box-sizing: border-box;
+}
+
+.submit:hover {
   color: rgb(152, 30, 8);
   background-color: aquamarine;
 }
 
-.h6 {
-  color: darkblue;
-  text-shadow: crimson;
+.birds img {
+  width: 120px;
+  height: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.birds {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+#button {
+  color: rgb(152, 30, 8);
+  background-color: aquamarine;
+}
+
+#button:hover {
+  color: aquamarine;
+  background-color: rgb(152, 30, 8);
 }

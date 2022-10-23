@@ -1,0 +1,25 @@
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+header {
+    margin: auto;
+}
+
+.birds {
+    background-color: aquamarine;
+}
+
+.card {
+  width: 33%;
+  margin: auto;
+  float: left;
+  align-items: center;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}

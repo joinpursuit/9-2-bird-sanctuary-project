@@ -10,17 +10,11 @@ function addShiny(total, bonus){
     if ((total >= 100) && (total < 300))
     { catToys.push(bonus[0]);
     } else if ((total >= 300) && (total < 500))
-    { catToys.push(bonus[0]);
-        catToys.push(bonus[1]);
+    { catToys.push(bonus[0], bonus[1]);
     } else if ((total >= 500) && (total < 1000))
-    {   catToys.push(bonus[0]);
-        catToys.push(bonus[1]);
-        catToys.push(bonus[2]);
+    {   catToys.push(bonus[0], bonus[1], bonus[2]);
     } else if ((total > 1000))
-    { catToys.push(bonus[0]);
-        catToys.push(bonus[1]);
-        catToys.push(bonus[2]);
-        catToys.push(bonus[3]);
+    { catToys.push(bonus[0], bonus[1], bonus[2], bonus[3]);
     }
     return catToys;
 }

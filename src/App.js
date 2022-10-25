@@ -1,11 +1,49 @@
-import React from "react";
-import BirdCard from "./Components/BirdCard";
+
+import {BirdCards} from "./Components/BirdCards";
+import birdData from "./data/birds"
+import { useState } from "react";
+import { Cart } from "./Components/Cart";
+import './App.css'
 
 function App() {
+  const [birds, setBirds]= useState([]);
+
+  // MUTAR consiste en CAMBIAR El contenido INTERNO de una estructura de datos (ARRAY / OBJETOS)
+  const adopt1 = (newBird) => {
+    let actualObject = {
+      name: newBird.name, // Pajarillo
+      amount: newBird.amount // 250
+    }
+
+    // actualObject = 'Soplador'
+    // birds = ['Soplador', 'Araguaney']
+
+    const foundBird = birds.find(bird => bird.name === actualObject.name)
+
+    if (foundBird) { 
+      alert("You cannot choose the same bird") 
+      return
+    }
+    
+    // Operador: SPREAD (...)
+    const updatedBirdsArray = [...birds, actualObject] // MANTENEMOS LA INMUTABILIDAD
+    setBirds(updatedBirdsArray)
+  }
+
   return (
     <div>
-      <h1>My project</h1>
-    </div>
+      <main className="main-container">
+        <aside>
+          <section className="section-cart">
+            <Cart adoptedBirds={birds} />
+          </section>
+          <section className="section-chekout">
+            CheckOut
+          </section>
+        </aside>
+        <BirdCards birdData={birdData} adopt={adopt1} />
+      </main>
+    </div> 
   );
 };
 

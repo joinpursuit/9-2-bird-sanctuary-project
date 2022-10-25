@@ -1,0 +1,52 @@
+/* .cards-container{ */
+    /* border: 2px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 100px 100px 100px; */
+    /* grid-gap: 10px;
+    width: 90%;
+    min-height: 450px; 
+} */
+
+.Birds{
+    /* border: 2px solid green; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* grid-template-rows: 100px 100px 100px; */
+    grid-gap: 10px;
+    /* width: 100%; */
+    list-style: none; 
+    /* para quitar el li symbol */
+}
+
+.Bird {
+    border: 1px solid black;
+    
+    padding: 12px;
+    /* margin: 18px; */
+    text-align: center;
+    width: 150px;
+    /* Una longitud o auto */
+    height: 220px;
+    border-radius: 6px;
+    /* Una longitud necesariamente */
+
+    /* Y  (relacionado con align-self) */
+    background-color: #cae2dd;
+    box-shadow: 3px 3px 3px #444a49;
+}
+
+.bird-name{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.bird-price{
+    margin-bottom: 6px;
+}
+.img {
+    width: 80px;
+    height: 80px;
+}

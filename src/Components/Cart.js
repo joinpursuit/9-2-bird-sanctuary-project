@@ -25,7 +25,7 @@ function Cart({ selectedBird, setSelectedBird }) {
       <ol>
         {selectedBird.map((bird, index) => {
           return (
-            <li key={bird.id}>
+            <li key={bird.id + index}>
               {bird.name}${bird.amount}
               <button onClick={() => handleDelete(index)}>Delete</button>
             </li>

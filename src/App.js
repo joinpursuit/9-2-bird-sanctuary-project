@@ -3,6 +3,7 @@ import {BirdCards} from "./Components/BirdCards";
 import birdData from "./data/birds"
 import { useState } from "react";
 import { Cart } from "./Components/Cart";
+import { Checkout } from "./Components/Checkout";
 import './App.css'
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
     setBirds(updatedBirdsArray)
   }
 
+  const reset = () => setBirds([])
+
   return (
     <div>
       <main className="main-container">
@@ -38,7 +41,7 @@ function App() {
             <Cart adoptedBirds={birds} />
           </section>
           <section className="section-chekout">
-            CheckOut
+            <Checkout reset={reset} />
           </section>
         </aside>
         <BirdCards birdData={birdData} adopt={adopt1} />

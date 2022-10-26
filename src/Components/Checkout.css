@@ -1,0 +1,12 @@
+.Checkout{
+  padding: 2rem;
+  margin-top: 2.5rem;
+  border: 1px solid black;
+  width: 250px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+}

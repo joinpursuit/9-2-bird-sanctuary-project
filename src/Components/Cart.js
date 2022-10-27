@@ -1,7 +1,7 @@
 import './Cart.css'
 import dataBonusItems from '../data/bonusItems'
 
-const Cart = ({adoptedBirds}) => {
+const Cart = ({adoptedBirds, deleteBird }) => {
   // const [bonuses, setBonuses] = useState([])
   const birdsQuantity = adoptedBirds.length
   const amounts = adoptedBirds.map((bird) => bird.amount)
@@ -11,27 +11,24 @@ const Cart = ({adoptedBirds}) => {
   
   const totalAmount = hasDiscount ? subTotal - (subTotal * 0.1) : subTotal
   
-  // let bonuses = []
-  // console.log(bonuses)
-
-  // if (totalAmount >= 100 && totalAmount < 300) { 
-  //   console.log(bonuses)
-  //   bonuses = dataBonusItems.splice(0, 1)
-  // }
-
-  // if (totalAmount >= 300 && totalAmount < 500) bonuses = dataBonusItems.splice(0, 2)
-  // if (totalAmount >= 500 && totalAmount < 1000) bonuses = dataBonusItems.splice(0, 3)
-  // if (totalAmount > 1000) bonuses = dataBonusItems
+  let bonuses = []
+  if (totalAmount >= 100 && totalAmount < 300) bonuses = dataBonusItems.slice(0, 1)
+  if (totalAmount >= 300 && totalAmount < 500) bonuses = dataBonusItems.slice(0, 2)
+  if (totalAmount >= 500 && totalAmount < 1000) bonuses = dataBonusItems.slice(0, 3)
+  if (totalAmount > 1000) bonuses = dataBonusItems
 
   return (
     <div className="Cart">
         <h3 className="Cart__title">Cart</h3>
         <p className="Cart__discount">Discount: {hasDiscount ? '10%' : '0%'}</p>
-        <p className="Cart__total">Total: ${totalAmount}</p>
+        <h4 className="Cart__total">Total: ${totalAmount}</h4>
         <ol>
-            { adoptedBirds.map(({ name, amount }) => {
+            { adoptedBirds.map(({ name, amount, id }) => {
                 return(
-                  <li key={name}> {name}: ${amount} </li>
+                  <li key={id}> 
+                    <p>{name}: ${amount}</p>
+                    <button onClick={() => deleteBird(id)}>Delete</button> 
+                  </li>
                 )
               })
             }
@@ -39,7 +36,7 @@ const Cart = ({adoptedBirds}) => {
 
         <p className="Cart__donations">Your donation I can see sections with birds, that have a name, image, amount and adopt button</p>
         <ul>
-          <li>Here must be the bonuses list</li>
+          {bonuses.map(bonus => <li key={bonus}>{bonus}</li>)}
         </ul>
     </div>
   )

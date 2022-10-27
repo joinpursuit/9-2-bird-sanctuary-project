@@ -14,7 +14,6 @@ const Checkout = ({ reset }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-
     // Validamos que todos los campos tengan contenido
     if (!firstName || !lastName || !email || !zipCode) {
       alert('Invalid empty fields')
@@ -65,13 +64,11 @@ const Checkout = ({ reset }) => {
         </div>
 
         <div>
-          <label htmlFor="zipCode">Zipcode</label>
+          <label htmlFor="zipCode">Zip Code</label>
           <input onChange={(event) => setZipCode(event.target.value)} type='number' min="10000" max="99999" name="zipCode" id="zipCode" value={zipCode} />
         </div>
 
-        <button>
-          Submit
-        </button>
+        <input type='submit' value='Submit' />
       </form>
     </section>
   )

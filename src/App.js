@@ -11,26 +11,27 @@ function App() {
 
   // MUTAR consiste en CAMBIAR El contenido INTERNO de una estructura de datos (ARRAY / OBJETOS)
   const adopt1 = (newBird) => {
+    const randomExtraId = Math.round(Math.random() * 1000) // 0,685943674356124 ==> 4444-5785
+    
     let actualObject = {
+      id: `${newBird.id}${randomExtraId}`, /// 44441753
       name: newBird.name, // Pajarillo
       amount: newBird.amount // 250
     }
 
-    // actualObject = 'Soplador'
-    // birds = ['Soplador', 'Araguaney']
-
-    const foundBird = birds.find(bird => bird.name === actualObject.name)
-
-    if (foundBird) { 
-      alert("You cannot choose the same bird") 
-      return
-    }
-    
     // Operador: SPREAD (...)
     const updatedBirdsArray = [...birds, actualObject] // MANTENEMOS LA INMUTABILIDAD
     setBirds(updatedBirdsArray)
   }
 
+  // FUNCION PARA ELIMINAR
+  const deleteBird = (id) => {
+    const updatedBirds = birds.filter(bird => bird.id !== id)
+
+    setBirds(updatedBirds)
+  }
+
+  // FUNCION RESET
   const reset = () => setBirds([])
 
   return (
@@ -38,7 +39,7 @@ function App() {
       <main className="main-container">
         <aside>
           <section className="section-cart">
-            <Cart adoptedBirds={birds} />
+            <Cart adoptedBirds={birds} deleteBird={deleteBird} />
           </section>
           <section className="section-chekout">
             <Checkout reset={reset} />

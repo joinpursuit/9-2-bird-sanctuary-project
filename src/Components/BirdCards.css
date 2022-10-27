@@ -8,7 +8,7 @@
     min-height: 450px; 
 } */
 
-.Birds{
+.list-birds{
     /* border: 2px solid green; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

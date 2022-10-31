@@ -1,0 +1,17 @@
+* {
+    /* para seleccionar todos los elementos del navegador */
+    margin: 0;
+    padding: 0;
+    /* estamos removiendo estosd margenes que vienen por defecto con los H1 etc */
+    box-sizing: border-box;
+    /* confuguramos el boxsizing para que este tamano no se vea alterado por los bordes */
+
+
+}
+
+.main-container{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-between;
+    padding: 24px;
+}

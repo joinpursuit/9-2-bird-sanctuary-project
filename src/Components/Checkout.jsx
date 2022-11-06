@@ -7,8 +7,7 @@ function Checkout() {
   const [email, setEmail] = useState("");
   const [zipcode, setZipCode] = useState("");
 
-  function submitPurchase(e) {
-    e.preventDefault();
+  function submitPurchase() {
     if (firstname && lastname && email && zipcode) {
       alert("You have adopted birds. Thank you!");
       setFirstName("");

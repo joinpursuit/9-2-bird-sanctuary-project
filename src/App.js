@@ -11,7 +11,7 @@ function App () {
   return (
     <div className="birdApp">
      <BirdsCards selectBird={selectBird} setSelectBird={setSelectBird}/>
-     <Checkout/>
+     <Checkout />
      <Cart selectBird={selectBird} setSelectBird={setSelectBird}/>
     </div>
   );

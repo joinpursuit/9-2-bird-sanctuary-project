@@ -1,12 +1,45 @@
 import React, { useState } from "react";
-import BirdCards from "./BirdCards";
+import BirdCard from "./components/BirdCard";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import birdData from "./data/birds";
 import "./App.css";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  function addBird(bird) {
+    const newCart = [...cart];
+    newCart.push(bird);
+    setCart(newCart);
+  }
+
+  function removeBird(i) {
+    const newCart = [...cart];
+    newCart.splice(i, 1);
+    setCart(newCart);
+  }
+
+  function resetCart() {
+    setCart([]);
+  }
+
   return (
-    <div>
-      <BirdCards />
-    </div>
+    <>
+      <main>
+        <div className="cart">
+          <Cart cart={cart} removeBird={removeBird} />
+        </div>
+        <div className="checkout">
+          <Checkout resetCart={resetCart} />
+        </div>
+        <div className="birds">
+          {birdData.map((bird) => {
+            return <BirdCard addBird={addBird} bird={bird} />;
+          })}
+        </div>
+      </main>
+    </>
   );
 }
 

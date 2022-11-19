@@ -5,13 +5,10 @@ import Cart from "./components/Cart";
 
 function App() {
   const [birds, setBirds] = useState(birdData);
-  const [cart, setCart] = useState("");
+  const [cart, setCart] = useState([]);
 
   function addToCart(bird) {
-    setCart({
-      ...cart,
-      bird.name,
-    })
+    const cartCopy = setCart([...cart, bird]);
     return <ol>{bird.name}</ol>;
   }
 

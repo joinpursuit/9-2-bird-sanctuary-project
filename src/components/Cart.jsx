@@ -1,7 +1,7 @@
 import React from 'react'
 import bonusItems from '../data/bonusItems'
 
-export default function Cart({ cart, total, discount }) {
+export default function Cart({ cart, total }) {
   
 
   return (
@@ -14,7 +14,7 @@ export default function Cart({ cart, total, discount }) {
         {cart.map(bird => {
           return (
             <li>
-              {bird.name}
+              {bird.name}: ${bird.amount}
             </li>
           )
         })}

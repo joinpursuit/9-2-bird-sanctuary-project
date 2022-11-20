@@ -7,17 +7,18 @@ function App() {
   const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
 
-  function addToCart(bird) {
-    const cartCopy = setCart([...cart, bird]);
-    return <ol>{bird.name}</ol>;
+  function handleAddToCart(bird) {
+    setCart([...cart, bird]);
   }
 
   return (
     <div>
-      <Cart addToCart={addToCart} />
-      {birdData.map((bird) => {
-        return <BirdCard bird={bird} addToCart={addToCart} />;
-      })}
+      <Cart cart={cart} />
+      <div className="birds">
+        {birdData.map((bird) => {
+          return <BirdCard bird={bird} handleAddToCart={handleAddToCart} />;
+        })}
+      </div>
     </div>
   );
 }

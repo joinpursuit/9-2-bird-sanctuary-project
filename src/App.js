@@ -6,17 +6,21 @@ import Cart from "./components/Cart";
 function App() {
   const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
-  function handleAddToCart(bird) {
+  function handleBirdCardClick(bird) {
     setCart([...cart, bird]);
+    setTotal(total + bird.amount);
   }
 
   return (
     <div>
-      <Cart cart={cart} />
+      <Cart cart={cart} total={total} />
       <div className="birds">
         {birdData.map((bird) => {
-          return <BirdCard bird={bird} handleAddToCart={handleAddToCart} />;
+          return (
+            <BirdCard bird={bird} handleBirdCardClick={handleBirdCardClick} />
+          );
         })}
       </div>
     </div>

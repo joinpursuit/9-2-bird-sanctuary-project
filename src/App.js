@@ -17,6 +17,11 @@ function App() {
 
   function handleTextChange() {}
 
+  function handleDelete(bird) {
+    cart.splice(cart.indexOf(bird), 1);
+    setCart([...cart]);
+  }
+
   function handleSubmit() {
     alert("You have adopted birds. Thank you!");
     setCart([]);
@@ -36,7 +41,7 @@ function App() {
 
   return (
     <div>
-      <Cart cart={cart} total={total} />
+      <Cart cart={cart} total={total} handleDelete={handleDelete} />
       <Checkout
         user={user}
         handleTextChange={handleTextChange}

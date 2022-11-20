@@ -1,7 +1,7 @@
 import React from 'react'
 import bonusItems from '../data/bonusItems'
 
-export default function Cart({ cart, total }) {
+export default function Cart({ cart, total, handleDelete }) {
   
 
   return (
@@ -15,6 +15,7 @@ export default function Cart({ cart, total }) {
           return (
             <li>
               {bird.name}: ${bird.amount}
+              <button onClick={() => handleDelete(bird)}>Delete:</button>
             </li>
           )
         })}

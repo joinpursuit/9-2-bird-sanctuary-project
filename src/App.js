@@ -7,8 +7,8 @@ import Checkout from "./components/Checkout";
 function App() {
   const [birds, setBirds] = useState(birdData);
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [user, setUser] = useState({
+
+  let [user, setUser] = useState({
     firstName: "",
     lastName: "",
     zip: "",
@@ -17,15 +17,15 @@ function App() {
 
   function handleTextChange() {}
 
-  function handleDelete(bird) {
-    cart.splice(cart.indexOf(bird), 1);
+  function handleDelete(i) {
+    cart.splice(i, 1);
     setCart([...cart]);
   }
 
   function handleSubmit() {
     alert("You have adopted birds. Thank you!");
     setCart([]);
-    setTotal(0);
+    // setTotal(0);
     setUser({
       firstName: "",
       lastName: "",
@@ -36,21 +36,24 @@ function App() {
 
   function handleBirdCardClick(bird) {
     setCart([...cart, bird]);
-    setTotal(total + bird.amount);
   }
 
   return (
     <div>
-      <Cart cart={cart} total={total} handleDelete={handleDelete} />
+      <Cart cart={cart} handleDelete={handleDelete} />
       <Checkout
         user={user}
         handleTextChange={handleTextChange}
         handleSubmit={handleSubmit}
       />
       <div className="birds">
-        {birdData.map((bird) => {
+        {birdData.map((bird, i) => {
           return (
-            <BirdCard bird={bird} handleBirdCardClick={handleBirdCardClick} />
+            <BirdCard
+              key={bird.name}
+              bird={bird}
+              handleBirdCardClick={handleBirdCardClick}
+            />
           );
         })}
       </div>

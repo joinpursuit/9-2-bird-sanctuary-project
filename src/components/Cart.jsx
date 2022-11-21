@@ -1,21 +1,24 @@
 import React from 'react'
 import bonusItems from '../data/bonusItems'
 
-export default function Cart({ cart, total, handleDelete }) {
+export default function Cart({ cart, handleDelete }) {
   
-
+  const total = cart.reduce((acc, bird) => {
+    return bird.amount + acc;
+  }, 0);
+  
   return (
     <div className='Cart'>
       <h2>Cart</h2>
-      <h4>Discount: {cart.length < 3 ? 0 : 10}%</h4>
+      <h3>Discount: {cart.length < 3 ? 0 : 10}%</h3>s
       <h4>Total: ${total}</h4>
 
       <ol>
-        {cart.map(bird => {
+        {cart.map((bird, i) => {
           return (
-            <li>
+            <li key={`${bird.id}-${i}`}>
               {bird.name}: ${bird.amount}
-              <button onClick={() => handleDelete(bird)}>Delete:</button>
+              <button onClick={() => handleDelete(i)}>Delete:</button>
             </li>
           )
         })}
